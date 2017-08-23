@@ -7,11 +7,28 @@
     <h3> If you have changed your mind, click the boxes next to the item you would like to keep before hitting submit below.</h3>
  </header>
 <body>
+
 <form method = "post" action = "/order">
-	<% toppings.each do |value|%>
-	<p><input  type="checkbox"  value= '<%=value%>' name= 'toppings[]'><%=value%> </p>	
-	<%end%>
- <input type="submit" name="confirm" value="confirm">
+	<%i = 0%>
+<%toppings.each do |x| %>
+<%i += 1%>
+<p><input type = "radio" name = "inputs + <%=i.to_s%>" value = "<%=x%>" checked>yes
+<input type = "radio" name = "inputs + <%=i.to_s%>" value = "" >no
+<%=x%> <% if x == "Ham"%>
+         <image src="img/ham.jpg" style="width:50px;height:50px;">
+       <% elsif x == "Turkey"%>
+         <image src="img/turkey.jpg" style="width:50px;height:50px;">
+       <% elsif x == "Salami"%>
+         <image src="img/sam.jpg" style="width:50px;height:50px;">
+       <% elsif x == "Pepperoni"%>
+         <image src="img/salami.jpg" style="width:50px;height:50px;">
+
+
+
+         <%end%></p>
+
+<%end%>
+ <input type="submit" >
 </form>
 </center>
 </body>

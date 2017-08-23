@@ -6,16 +6,15 @@
 </header>
 
 <body>
-<form action = "/confirmation">
+<form method="post" action = "/confirmation">
+  <h3>Your order of a sandwich with</h3> 
 
 	<%toppings.each do|value|%>
-	<%value%>
-
-	<br>
+	<h5><%=value%></h5> 
 	<%end%>
+  <h3>will be ready in 10 minutes.</h3>
 </form>
-<p>Your order of a sandwich with <%= toppings%>
-will be ready in 10 minutes.</p>
+
 </center>
 </body>
 </html>
